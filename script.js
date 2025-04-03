@@ -1,3 +1,4 @@
+import {API_KEY} from "./config.js"
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const current_weatherEl = document.getElementById("current_weather");
@@ -9,8 +10,6 @@ const search_button = document.querySelector(".search button");
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "Ovtober", "November", "December"];
-
-const API_KEY = "19b57d3d876a43ed9e535747241912";
 
 locationEl.textContent = "Asia/Kolkata";
 locationEl.style.display = "none";
@@ -41,6 +40,7 @@ async function getWeatherData(city) {
             throw new Error("City not found");
         }
         const data = await response.json();
+        console.log(data);
         showWeatherData(data);
     } catch (error) {
         console.error("Error fetching weather data:", error.message);
