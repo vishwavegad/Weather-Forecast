@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto Condensed", "Poppins";
+    background-image: url("background_image2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+.container{
+    padding: 20px 40px;
+}
+
+.current_info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.date_time{
+    font-weight: 60;
+}
+
+.date_time .time{
+    color: black;
+    font-size: 60px;
+    font-weight: 200;
+}
+
+.date_time #am_pm{
+    font-size: 30px;
+    margin-left: 10px;
+    font-weight: 200;
+}
+
+.date_time .date{
+    font-size: 30px;
+    font-weight: 200;
+    color: black;
+}
+
+.place{
+    text-align: end;
+}
+
+.place .location{
+    font-size: 30px;
+    font-weight: 200;
+    color: black;
+}
+
+#current_weather{
+    display: none;
+}
+
+.current_info .other{
+    flex-direction: column;
+    background-color: rgba(24, 24, 27, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 300;
+    margin: 20px 0;
+    border: 1px solid white;
+}
+
+.current_info .other .weather_info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    margin-left: 5px;
+}
+
+.search input{
+    width: 200px;
+    height: 40px;
+    background-color: rgba(24, 24, 27, 0.8);
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+.search button{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: rgba(24, 24, 27, 0.8);
+    border-radius: 50px;
+    border: none;
+}
+
+.search button img{
+    color: white;
+}
+
+#today_info{
+    display: none;
+}
+
+.future_days_info{
+    display: flex;
+    background: rgba(24, 24, 27, 0.8);
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.future_days_info .today_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.future_days_info .today_info .day{
+    padding: 5px 15px;
+    background: #3c3c44;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.future_days_info .future_weather{
+    display: flex;
+}
+
+.future_days_info .today_info .temperature{
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.future_weather .future_weather_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+}
+
+.future_weather .future_weather_item .day{
+    background: #49494e;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.future_weather .future_weather_item .temperature{
+    font-weight: 300;
+    font-size: 15px;
+}
+
+@media only screen and (max-width:730px){
+    .container{
+        padding: 20px;
+    }
+    .future_days_info{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+    .date_time .time{
+        font-size: 40px;
+    }
+    .date_time #am_pm{
+        font-size: 20px;
+    }
+    .date_time .date{
+        font-size: 20px;
+    }
+    .current_info .other{
+        padding: 15px;
+        font-size: 15px;
+    }
+    .place{
+        margin-top: 5px;
+    }
+    .place .location{
+        font-size: 15px;
+    }
+    .place .location_info{
+        font-size: 10px;
+    }
+    .search input{
+        width: 150px;
+        height: 30px;
+    }
+    .future_days_info .today_info .temperature{
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    .future_days_info{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+    }
+}
